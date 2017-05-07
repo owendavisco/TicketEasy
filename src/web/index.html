@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JustTicketEasy</title>
+</head>
+<body>
+    <div id="purchase-main" style="text-align: center; margin-top: 10em">
+        <h1>Just Ticket Easy, Click Purchase to Start</h1>
+        <button id="purchase-button" disabled>Purchase</button>
+    </div>
+    <div style="display: none" id="purchase-menu">
+        <h6>Ticket Available:</h6><span id="ticket-count"></span>
+    </div>
+</body>
+<script type="application/javascript">
+    //Elements
+    var purchaseButton = document.getElementById("purchase-button"),
+    purchaseMain = document.getElementById("purchase-main"),
+    purchaseMenu = document.getElementById("purchase-menu"),
+    ticketCount = document.getElementById("ticket-count");
+
+    var ws = new WebSocket("ws://localhost:8080");
+
+    purchaseButton.onclick = handlePurchaseClick;
+
+    function handlePurchaseClick(e) {
+        console.log("Purchase button clicked");
+        purchaseMain.style.display = "none";
+        purchaseMenu.style.display = "block";
+    }
+
+    function connectSocket() {
+
+    }
+
+    function handleWebSocketSuccess(e) {
+
+    }
+
+    function handleWebSocketError(e) {
+
+    }
+
+</script>
+</html>
